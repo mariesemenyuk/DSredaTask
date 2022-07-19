@@ -32,9 +32,8 @@ public interface ShopPositionMapper {
     void update(ShopPositionEntity shopPosition);
 
     @Delete("delete from shop_position where id=#{id} ")
-    public boolean deleteById(@Param("id") Long id);
+    boolean deleteById(@Param("id") Long id);
 
-    // Many To One
 
     @Select("SELECT * FROM shop_position WHERE brand_id = #{brandId}")
     @Results(value = {
@@ -47,13 +46,4 @@ public interface ShopPositionMapper {
     })
     List<ShopPositionEntity> selectShopPositions(Long brandId);
 
-    @Select("SELECT * FROM brand")
-    @Results(value = {
-            @Result(property = "id", column = "id"),
-            @Result(property = "title", column = "title"),
-            @Result(property = "country", column = "country"),
-            @Result(property = "positions", column = "id", javaType = List.class,
-                    many=@Many(select = "selectShopPositions"))
-    })
-    public List<BrandEntity> getAllBrands();
 }

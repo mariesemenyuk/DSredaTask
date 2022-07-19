@@ -42,8 +42,5 @@ public interface ModelMapper {
     void update(ModelEntity brand);
 
     @Delete("delete from model where id=#{id} ")
-    public boolean deleteById(@Param("id") Long id);
-
-    @Select("SELECT * FROM shop_position WHERE shop_position.model_id = #{id}")
-    List<ShopPositionEntity> getPositions(Long id);
+    boolean deleteById(@Param("id") Long id);
 }

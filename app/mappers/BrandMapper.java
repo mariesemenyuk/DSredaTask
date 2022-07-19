@@ -25,7 +25,7 @@ public interface BrandMapper {
             @Result(property = "country", column = "country"),
             @Result(property="positions", column = "id", javaType=List.class,
                     many=@Many(select="getPositions"))})
-    public BrandEntity findById(@Param("id") Long id);
+    BrandEntity findById(@Param("id") Long id);
 
     @Select("select * from brand where title = #{title}")
     @Results(value = {
@@ -33,7 +33,7 @@ public interface BrandMapper {
             @Result(property="title", column="title"),
             @Result(property="country", column="country"),
             @Result(property="positions", column = "id", javaType=List.class,
-                    many=@Many(select="getPositions"))
+                    many=@Many(select="SELECT * FROM shop_position WHERE shop_position.brand_id = #{id}"))
     })
     BrandEntity findByTitle(@Param("title") String title);
 
@@ -44,7 +44,7 @@ public interface BrandMapper {
     void update(BrandEntity brand);
 
     @Delete("delete from brand where id=#{id} ")
-    public boolean deleteById(@Param("id") Long id);
+    boolean deleteById(@Param("id") Long id);
 
     @Select("SELECT * FROM shop_position WHERE shop_position.brand_id = #{id}")
     List<ShopPositionEntity> getPositions(Long id);
