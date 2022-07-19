@@ -1,0 +1,8 @@
+GET    /                     controllers.ShopPositionController.getAllPositions
+GET    /brand/:id            controllers.ShopPositionController.getBrandPositions(id: Long)
+POST   /                     controllers.ShopPositionController.create(req: Request)
+PUT    /:id                  controllers.ShopPositionController.update(request:Request, id: Long)
+GET    /:id                  controllers.ShopPositionController.getPosition(id: Long)
+DELETE /:id                  controllers.ShopPositionController.delete(id: Long)
+
+GET    /:brand/:model        controllers.ShopPositionController.getPositionsByBrandAndModel(brand: String, model: String)

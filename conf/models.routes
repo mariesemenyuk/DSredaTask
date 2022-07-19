@@ -1,0 +1,6 @@
+GET    /                     controllers.ModelController.getAllModels
+POST   /                     controllers.ModelController.create(req: Request)
+PUT    /:id                  controllers.ModelController.update(request:Request, id: Long)
+
+GET    /:id                  controllers.ModelController.getModel(id: Long)
+DELETE /:id                  controllers.ModelController.delete(id: Long)

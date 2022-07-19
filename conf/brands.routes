@@ -1,0 +1,6 @@
+GET    /                     controllers.BrandController.getAllBrands
+POST   /                     controllers.BrandController.create(req: Request)
+PUT    /:id                  controllers.BrandController.update(request:Request, id: Long)
+
+GET    /:id                  controllers.BrandController.getBrand(id: Long)
+DELETE /:id                  controllers.BrandController.delete(id: Long)

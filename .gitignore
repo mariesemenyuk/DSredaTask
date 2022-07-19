@@ -1,0 +1,8 @@
+target
+/.bsp
+/.idea
+/logs
+/RUNNING_PID
+
+# Project exclude paths
+/out/
