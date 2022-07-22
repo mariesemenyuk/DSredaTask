@@ -1,0 +1,52 @@
+# Play framework + MyBatis + H2 database(PostgreSQL mode)
+
+# API
+
+Endpoints for Brand: 
+</p>
+<pre>
+<code>get all brands GET localhost:9000/brands</code>
+<code>add new brand POST localhost:9000/brands</code>
+<code>JSON: {
+"title": "",
+"country": ""
+}</code>
+<code>update brand PUT localhost:9000/brands/:id</code>
+<code>get brand GET localhost:9000/brands/:id</code>
+<code>delete brand DELETE localhost:9000/brands/:id</code>
+</pre>
+<p>
+
+Endpoints for Model:
+</p>
+<pre>
+<code>get all models GET localhost:9000/models</code>
+<code>add new model POST localhost:9000/models</code>
+<code>JSON:{
+"title": "",
+"productionStarted": int,
+"productionFinished": int
+}</code>
+<code>update model PUT localhost:9000/models/:id</code>
+<code>get model GET localhost:9000/models/:id</code>
+<code>delete model DELETE localhost:9000/models/:id</code>
+</pre>
+<p>
+Endpoints for Shop Positions:
+</p>
+<pre>
+<code>get all positions GET localhost:9000/shop</code>
+<code>get all positions of specific brand GET localhost:9000/shop/brand/:id</code>
+<code>add new position POST localhost:9000/shop</code>
+<code>JSON:{
+"brand_id": int,
+"model_id": int,
+"mileage": int,
+"price": int,
+"year_prod": int
+}</code>
+<code>update position PUT localhost:9000/shop/:id</code>
+<code>get position GET localhost:9000/shop/:id</code>
+<code>delete position DELETE localhost:9000/shop/:id</code>
+<code>get all positions of specific brand and model GET localhost:9000/shop/:brand/:model</code>
+    </pre>
